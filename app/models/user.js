@@ -38,7 +38,7 @@ usersSchema.statics.findByCredentials = async (userCredential, password) => {
     } else if (validator.isMobilePhone(userCredential, "en-IN")) {
       user = await User.findOne(
         { contact: userCredential },
-        "-_id -__v -createdAt -updatedAt"
+        "-__v -createdAt -updatedAt"
       );
     }
 

@@ -12,6 +12,7 @@ const binLocations = require("./controller/binLocator");
 const imagePredictor = require("./controller/imagePredictor");
 const verifyjwt = require("./controller/auth");
 const eWasteInfo = require("./controller/eWasteForm");
+const getPosts = require("./controller/getPosts");
 
 //routes
 router.post("/signup", signup, (req, res) => {
@@ -32,6 +33,10 @@ router.get("/binlocations", binLocations, (req, res) => {
 
 router.post("/imageprediction", imagePredictor, (req, res) => {
   console.log("Image Predicted Successfully!!");
+});
+
+router.get("/posts/:page", getPosts, (req, res) => {
+  console.log("Fetched posts");
 });
 
 const multer = require("multer");
