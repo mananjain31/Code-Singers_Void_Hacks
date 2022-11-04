@@ -19,7 +19,7 @@ const login = async (req, res) => {
         req.body.password
       );
       if (user) {
-        const token = generateAuthToken(User._id, User.contact);
+        const token = generateAuthToken(user._id, user.contact);
         res
           .cookie("token", token)
           .status(200)
