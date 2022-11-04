@@ -11,7 +11,7 @@ const generateAuthToken = (id, userName) => {
   return token;
 };
 
-const login = async (req, res) => {
+const login = async (req, res, next) => {
   try {
     if (req.body.credential && req.body.password) {
       const user = await User.findByCredentials(
@@ -41,6 +41,7 @@ const login = async (req, res) => {
       message: error.message,
     });
   }
+  next();
 };
 
 module.exports = login;

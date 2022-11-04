@@ -51,6 +51,15 @@ usersSchema.statics.findByCredentials = async ( userCredential , password) => {
     }   
 }
 
+usersSchema.pre('save', async function (next) {
+    const user = this
+
+    if (user.isModified('password')) {
+        user.password = await bcrypt.hash(user.password, 8)
+    }
+
+    next()
+})
 //usersSchema.index({ contact : 1})
 
 const User = mongoose.model("users", usersSchema);
