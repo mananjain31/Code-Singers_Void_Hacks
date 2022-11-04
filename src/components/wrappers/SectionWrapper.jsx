@@ -18,7 +18,7 @@ const SectionWrapper = ({
         inverted ? "md:flex-row-reverse" : "md:flex-row"
       } flex-col justify-between gap-3 ${className} items-center`}
     >
-      <div className="md:w-2/3 w-full flex flex-col gap-3">
+      <div className="md:w-[45%] w-full flex flex-col gap-3">
         <h1 className="text-5xl mb-5">{heading}</h1>
         {paragraphs.map((item, index) => {
           return <p key={index}>{item}</p>;
@@ -34,7 +34,7 @@ const SectionWrapper = ({
         )}
       </div>
       <img
-        className="md:max-w-[400px] object-cover aspect-square max-w-full"
+        className="md:max-w-[600px] object-cover  max-w-full"
         src={image ? image : "https://source.unsplash.com/random/"}
         alt=""
       />

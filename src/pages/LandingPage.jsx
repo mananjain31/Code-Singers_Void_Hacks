@@ -6,7 +6,7 @@ import gif1 from "assets/1.gif";
 import gif2 from "assets/2.gif";
 import heroGIF from "assets/3.gif";
 import gif4 from "assets/4.gif";
-import LogoSquare from "assets/VoidSquare.png";
+import LogoSquare from "assets/VoidSquare.jpg";
 
 const LandingPage = () => {
   return (
@@ -33,6 +33,7 @@ const LandingPage = () => {
           inverted
           image={heroGIF}
         />
+        <hr />
         {/* Our Proposed Solution / What we do */}
         <SectionWrapper
           heading="Our Proposed Solution / What we do"
