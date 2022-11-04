@@ -13,6 +13,7 @@ const imagePredictor = require("./controller/imagePredictor");
 const verifyjwt = require("./controller/auth");
 const eWasteInfo = require("./controller/eWasteForm");
 const getPosts = require("./controller/getPosts");
+const contact = require("./controller/contact");
 
 //routes
 router.post("/signup", signup, (req, res) => {
@@ -42,5 +43,9 @@ router.get("/posts/:page", getPosts, (req, res) => {
 const multer = require("multer");
 const upload = multer({ dest: path.join(__dirname, "/public") });
 router.post("/uploadfiles", verifyjwt, upload.single("image"), eWasteInfo);
+
+router.post("/notify", contact, (req, res) => {
+  console.log("Mail Sent");
+});
 
 module.exports = router;
