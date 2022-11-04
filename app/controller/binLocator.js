@@ -12,7 +12,7 @@ const binLocations = async (req, res, next) => {
           },
         },
       },
-    }).limit(5);
+    }, "-_id").limit(5);
     res.status(200).json({
       code: 200,
       status: "success",
