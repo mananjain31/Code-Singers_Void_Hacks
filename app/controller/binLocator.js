@@ -16,7 +16,7 @@ const binLocations = async (req, res, next) => {
     res.status(200).json({
       code: 200,
       status: "success",
-      message: `Displaying Food Collectors`,
+      message: `Displaying Nearest Bins`,
       binLocations,
     });
   } catch (error) {
