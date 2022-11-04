@@ -42,7 +42,7 @@ const team = [
 
 const OurTeam = () => {
   return (
-    <section className={`${respPX} py-8 bg-slate-200 text-center`}>
+    <section className={`${respPX} py-8 bg-[#8DE78D] text-center`}>
       <h2 className="text-4xl">Our Team</h2>
       <div className="flex justify-center mt-4">
         <p className="w-3/4">
@@ -52,10 +52,10 @@ const OurTeam = () => {
           blanditiis expedita consequuntur adipisci.
         </p>
       </div>
-      <div className="text-left flex flex-wrap justify-evenly mt-10">
+      <div className="text-left flex flex-wrap justify-evenly mt-10 gap-2">
         {team.map((item, index) => {
           return (
-            <div key={index} className="flex gap-6 w-full md:w-1/2 py-4">
+            <div key={index} className="flex gap-6 w-full md:w-1/3 py-5">
               <img
                 src={item.image}
                 alt=""

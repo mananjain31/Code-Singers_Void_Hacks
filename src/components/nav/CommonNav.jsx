@@ -5,7 +5,25 @@ import React from "react";
 const CommongNav = () => {
   //   const { isAuth } = useSelector((state) => state);
   const isAuth = false;
-  const list = [];
+  const list = [
+    {
+      component: "Locate Dustbin",
+      to: "/locate-dustbins",
+    },
+    {
+      component: "Waste Category",
+      to: "/waste-category",
+    },
+    {
+      component: "Food Colectors",
+    },
+    {
+      component: "Waste Collectors",
+    },
+    {
+      component: "E-Waste Timeline",
+    },
+  ];
 
   list.push(
     isAuth
@@ -19,9 +37,9 @@ const CommongNav = () => {
         }
       : {
           component: (
-            <Button variant="contained" color="inherit">
+            <button className="border-4 border-black px-2 py-1 text-lg">
               Login / Register
-            </Button>
+            </button>
           ),
           to: "/login-register",
         }
