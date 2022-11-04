@@ -1,21 +1,18 @@
 const BinLocations = require("../models/binLocations");
 
-const fetchFoodCollectors = async (req, res, next) => {
+const binLocations = async (req, res, next) => {
   try {
-    const { latitude, longitude } = req.body;
-    const binLocations = await BinLocations.find(
-      {
-        location: {
-          $near: {
-            $geometry: {
-              type: "Point",
-              coordinates: [longitude, latitude],
-            },
+    const { latitude, longitude } = req.query;
+    const binLocations = await BinLocations.find({
+      location: {
+        $near: {
+          $geometry: {
+            type: "Point",
+            coordinates: [longitude, latitude],
           },
         },
       },
-      "-_id -__v"
-    ).limit(5);
+    }).limit(5);
     res.status(200).json({
       code: 200,
       status: "success",
@@ -33,4 +30,4 @@ const fetchFoodCollectors = async (req, res, next) => {
   next();
 };
 
-module.exports = fetchFoodCollectors;
+module.exports = binLocations;

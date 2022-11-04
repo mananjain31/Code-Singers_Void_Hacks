@@ -1,14 +1,17 @@
 const mongoose = require("mongoose");
 
-const binLocatorSchema = new mongoose.Schema({
+const BinLocationSchema = new mongoose.Schema({
   location: {
-    type: "Point",
-    coordinates: [Number],
+    type: {
+      type: String,
+      default: "Point",
+    },
+    coordinates: { type: [Number], default: [0, 0] },
   },
 });
 
-binLocatorSchema.index({ location: "2dsphere" });
+BinLocationSchema.index({ location: "2dsphere" });
 
-const binLocator = mongoose.model("binLocations", binLocatorSchema);
+const BinLocations = mongoose.model("binLocations", BinLocationSchema);
 
-module.exports = binLocator;
+module.exports = BinLocations;
