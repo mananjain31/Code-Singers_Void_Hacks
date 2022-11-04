@@ -3,10 +3,34 @@ import CommongNav from "components/nav/CommonNav";
 import { respPX } from "constants/styles";
 import React, { useEffect } from "react";
 import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
+import eWasteTrash from "assets/e-waste-trash.jpeg";
+import organicTrash from "assets/organic-trash.jpeg";
+import glassTrash from "assets/glass-trash.jpeg";
+import metalTrash from "assets/metal-trash.jpeg";
+import paperTrash from "assets/paper-trash.jpeg";
+import plasticTrash from "assets/plastic-trash.jpeg";
+
+function getImageFromClass(name) {
+  switch (name) {
+    case "Organic":
+      return organicTrash;
+    case "EWaste":
+      return eWasteTrash;
+    case "Glass":
+      return glassTrash;
+    case "Metal":
+      return metalTrash;
+    case "Plastic":
+      return plasticTrash;
+    default:
+      return null;
+  }
+}
 
 const WasteCategoryPage = () => {
   const uploaderRef = React.useRef(null);
   const [image, setImage] = React.useState(null);
+  const [result, setResult] = React.useState(null);
 
   const handleChange = (e) => {
     console.log(e);
@@ -19,7 +43,8 @@ const WasteCategoryPage = () => {
       const { data } = await api.post("/imageprediction", {
         imageDataUrl: reader.result,
       });
-      console.log(data);
+      setResult(data.predictions);
+      console.log(data.predictions);
     };
   };
 
@@ -50,18 +75,18 @@ const WasteCategoryPage = () => {
           <input
             type="file"
             name="imageFile"
+            className="my-4"
             alt="your trash"
             ref={uploaderRef}
             onChange={handleChange}
           />
 
-          {/* <button
-            className="px-4 py-2 bg-blue-600 rounded-md text-white"
-            onClick={() => uploaderRef.current.click()}
-          >
-            Upload
-          </button> */}
-          {image && <img src={image} alt="your trash" />}
+          {image && result && (
+            <div className="flex justify-around p-4 bg-green-50 flex-wrap">
+              <img src={image} alt="your trash" />
+              <img src={getImageFromClass(result[0].class)} alt="your trash" />
+            </div>
+          )}
         </form>
       </main>
     </>
