@@ -7,7 +7,7 @@ const eWasteInfo = async (req, res, next) => {
       newPost.title = req.body.title;
       newPost.description = req.body.description;
       console.log(req.file);
-      newPost.image = `${req.file.filename}.${req.file.mimetype.split("/")[1]}`;
+      newPost.image = req.file.filename;
       newPost.user = req.userId;
       await newPost.save();
       res.status(200).json({
