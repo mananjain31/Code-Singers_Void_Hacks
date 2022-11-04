@@ -39,12 +39,44 @@ export const { clearAllErrors, setStatus, userLogin, userRegister } =
   userSlice.actions;
 export default userSlice.reducer;
 
-export const user_login = (email, password) => {
+export const user_login = (credential, password) => {
   return async function userLoginThunk(dispatch, getState) {
     dispatch(setStatus({ type: STATUS.LOADING, message: "Loading" }));
     try {
-      const { data } = await api.get("");
-      dispatch(userLogin());
+      const { data } = await api.post("login", { credential, password });
+
+      dispatch(userLogin(data.user));
+      dispatch(
+        setStatus({
+          type: STATUS.IDLE,
+          message: "User Login Successfully",
+        })
+      );
+    } catch (error) {
+      if (error) {
+        dispatch(
+          setStatus({
+            type: STATUS.ERROR,
+            message: error.response.data.message,
+          })
+        );
+      }
+    }
+  };
+};
+
+export const user_registration = (name, contact, email, address, password) => {
+  return async function userRegistrationThunk(dispatch, getState) {
+    dispatch(setStatus({ type: STATUS.LOADING, message: "Loading" }));
+    try {
+      const { data } = await api.post("signup", {
+        name,
+        email,
+        contact,
+        password,
+        address,
+      });
+      dispatch(userRegister());
       dispatch(
         setStatus({
           type: STATUS.IDLE,
