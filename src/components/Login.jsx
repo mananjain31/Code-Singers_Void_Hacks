@@ -25,29 +25,27 @@ const Login = () => {
   }, []);
 
   return (
-    <div className="inputFields ">
+    <div className="inputFields flex justify-center ">
       <form>
-        <div className="flex flex-col m-3 ml-auto">
-          <label className="mb-1 uppercase">Email</label>
-          <TextField
-            id="outlined-basic"
-            label="example@gmail.com / 00000000"
-            variant="outlined"
+        <div className="flex flex-col mb-6 ml-auto">
+          <label className="mb-2 uppercase">Email</label>
+          <input
+            name="credentials"
             value={credentials}
             onChange={(e) => setCredentials(e.target.value)}
-            style={{ background: "#DCDCDC" }}
+            className="w-80 h-11 rounded-lg bg-slate-100 text-black-600 p-2"
+            placeholder="example@gmail.com or 7894556123"
           />
         </div>
 
         <div className="flex flex-col m-3 ml-auto">
-          <labe className="mb-1 uppercase">Password</labe>
-          <TextField
-            id="outlined-adornment-password"
-            label="password"
-            variant="outlined"
+          <labe className="mb-2 uppercase">Password</labe>
+          <input
+            type="password"
+            name="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            style={{ background: "#DCDCDC" }}
+            className="w-80 h-11 rounded-lg bg-slate-100 text-black-600 p-2"
           />
         </div>
 
