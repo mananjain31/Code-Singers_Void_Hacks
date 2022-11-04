@@ -1,7 +1,7 @@
 const TeachableMachine = require("@sashido/teachablemachine-node");
 
 const model = new TeachableMachine({
-  modelUrl: "https://teachablemachine.withgoogle.com/models/17g-dtz5I/",
+  modelUrl: "https://teachablemachine.withgoogle.com/models/btUwbk0c8/",
 });
 
 const imagePredictor = async (req, res, next) => {
