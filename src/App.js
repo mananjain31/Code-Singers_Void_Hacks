@@ -4,12 +4,14 @@ import LandingPage from "pages/LandingPage";
 import LoginRegisterPage from "pages/LoginRegisterPage";
 import LogoutPage from "pages/LogoutPage";
 import ImagePred from "pages/ImagePred";
+import LocateDustbinsPage from "pages/LocateDustbinsPage";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/locate-dustbins" element={<LocateDustbinsPage />} />
         <Route path="/img-pred" element={<ImagePred />} />
         <Route path="/login-register" element={<LoginRegisterPage />} />
         <Route

@@ -3,6 +3,7 @@ import React from "react";
 import Divyanshu from "assets/divyanshu.jpeg";
 import Manan from "assets/manan.jpeg";
 import Aditya from "assets/aditya.jpeg";
+import Aman from "assets/aman.jpeg";
 
 const team = [
   {
@@ -16,8 +17,7 @@ const team = [
   {
     name: "Aman Pandagre",
     role: "Frontend",
-
-    image: "https://source.unsplash.com/random/200x200",
+    image: Aman,
     github: "https://github.com/mananjain31/",
     linkedin: "https://github.com/mananjain31/",
     instagram: "https://github.com/mananjain31/",
