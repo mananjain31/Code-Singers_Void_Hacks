@@ -1,7 +1,7 @@
 const validator = require("validator");
 const Users = require("../models/user");
 
-const signUp  =  async (req, res, next) => {
+const signUp = async (req, res, next) => {
   try {
     if (
       req.body.name &&
@@ -15,14 +15,14 @@ const signUp  =  async (req, res, next) => {
         minSymbols: 1,
         returnScore: false,
       }) &&
-      (req.body.address.pincode.toString().length === 6) &&
+      req.body.address.pincode.toString().length === 6 &&
       req.body.address.addressLine &&
       req.body.address.locality &&
       req.body.address.city &&
       req.body.address.state
     ) {
-      const {name, email, contact, password, address} = req.body;
-      
+      const { name, email, contact, password, address } = req.body;
+
       const check = await Users.exists({ $or: [{ email }, { contact }] });
       if (check) {
         throw new Error("User already exists!");
@@ -32,7 +32,7 @@ const signUp  =  async (req, res, next) => {
           email,
           contact,
           password,
-          address
+          address,
         });
         await user.save();
 
@@ -53,6 +53,5 @@ const signUp  =  async (req, res, next) => {
   }
   next();
 };
-
 
 module.exports = signUp;
