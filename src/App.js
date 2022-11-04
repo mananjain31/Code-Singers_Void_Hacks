@@ -1,9 +1,10 @@
+import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import RequireAuth from "components/wrappers/RequireAuth";
 import LandingPage from "pages/LandingPage";
 import LoginRegisterPage from "pages/LoginRegisterPage";
 import LogoutPage from "pages/LogoutPage";
-import ImagePred from "pages/ImagePred";
+import WasteCategoryPage from "pages/WasteCategoryPage";
 import LocateDustbinsPage from "pages/LocateDustbinsPage";
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/locate-dustbins" element={<LocateDustbinsPage />} />
-        <Route path="/img-pred" element={<ImagePred />} />
+        <Route path="/waste-category" element={<WasteCategoryPage />} />
         <Route path="/login-register" element={<LoginRegisterPage />} />
         <Route
           path="/logout"

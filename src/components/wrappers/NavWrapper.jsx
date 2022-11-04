@@ -19,7 +19,7 @@ const NavWrapper = ({ list }) => {
       );
     });
   const renderBurgerList = () => (
-    <aside className="bg-[rgb(73,180,35)] fixed h-full right-0 top-0">
+    <aside className="bg-[rgb(73,180,35)] fixed h-full right-0 top-0 z-50">
       <div className="flex flex-col-reverse justify-end h-full gap-10 px-16 py-16">
         {list.map((item, index) => (
           <Link key={index} to={item.to}>
@@ -39,7 +39,9 @@ const NavWrapper = ({ list }) => {
       className={`${respPX} py-4 flex gap-2 items-center justify-between bg-[#8DE78D] sticky top-0 z-10`}
     >
       <h1 className="text-3xl">
-        <img src={Void} alt="logo" />
+        <Link to="/">
+          <img src={Void} alt="logo" />
+        </Link>
       </h1>
       {burgerOpen ? renderBurgerList() : renderList()}
       {!burgerOpen && (
