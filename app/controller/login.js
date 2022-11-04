@@ -27,7 +27,6 @@ const login = async (req, res, next) => {
             code: 200,
             status: "success",
             message: `${user.name} Login Successful!`,
-            token,
           });
       } else {
         throw new Error("User not found!");
