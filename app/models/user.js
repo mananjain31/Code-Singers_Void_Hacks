@@ -34,7 +34,7 @@ usersSchema.statics.findByCredentials = async ( userCredential , password) => {
         if(validator.isEmail(userCredential)){
             user = await User.findOne({ email : userCredential})
         } else if(validator.isMobilePhone(userCredential, "en-IN")){
-            user = await User.findOne({ contact : userCredential})
+            user = await User.findOne({ contact : userCredential}, "-_id -__v -createdAt -updatedAt")
         }
 
         if(!user) {
@@ -45,7 +45,8 @@ usersSchema.statics.findByCredentials = async ( userCredential , password) => {
         if(!isMatch) {
             throw new Error('Unable to login')
         }
-        return user
+        user.password = undefined;
+        return user;
     } catch(e) {
         throw new Error("Unable to login")
     }   

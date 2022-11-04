@@ -4,8 +4,8 @@ require("dotenv").config();
 
 const jwstSecret = process.env.JWT_SECRET;
 
-const generateAuthToken = (id, userName) => {
-  const token = jwt.sign({ id, userName }, jwstSecret, {
+const generateAuthToken = (id, contact) => {
+  const token = jwt.sign({ id, contact }, jwstSecret, {
     expiresIn: "1800s",
   });
   return token;
@@ -27,6 +27,7 @@ const login = async (req, res, next) => {
             code: 200,
             status: "success",
             message: `${user.name} Login Successful!`,
+            user
           });
       } else {
         throw new Error("User not found!");
