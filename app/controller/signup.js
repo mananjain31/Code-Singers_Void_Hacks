@@ -7,7 +7,6 @@ const signUp  =  async (req, res, next) => {
       req.body.name &&
       validator.isEmail(req.body.email) &&
       validator.isMobilePhone(req.body.contact.toString(), "en-IN") &&
-      req.body.DOB &&
       validator.isStrongPassword(req.body.password, {
         minLength: 6,
         minLowercase: 1,

@@ -12,4 +12,13 @@ module.exports = {
   },
   password: "pw",
 };
-// login from mobile or email
+
+
+// response
+/*
+{
+  "code": 200,
+  "status": "Success",
+  "message": "User Successfully Signed-UP!"
+}
+*/

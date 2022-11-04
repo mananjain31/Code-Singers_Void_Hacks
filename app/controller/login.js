@@ -4,14 +4,14 @@ require("dotenv").config();
 
 const jwstSecret = process.env.JWT_SECRET;
 
-const generateAuthToken = (id, userName) => {
-  const token = jwt.sign({ id, userName }, jwstSecret, {
+const generateAuthToken = (id, contact) => {
+  const token = jwt.sign({ id, contact }, jwstSecret, {
     expiresIn: "1800s",
   });
   return token;
 };
 
-const login = async (req, res) => {
+const login = async (req, res, next) => {
   try {
     if (req.body.credential && req.body.password) {
       const user = await User.findByCredentials(
@@ -19,7 +19,7 @@ const login = async (req, res) => {
         req.body.password
       );
       if (user) {
-        const token = generateAuthToken(User._id, User.contact);
+        const token = generateAuthToken(user._id, user.contact);
         res
           .cookie("token", token)
           .status(200)
@@ -27,7 +27,7 @@ const login = async (req, res) => {
             code: 200,
             status: "success",
             message: `${user.name} Login Successful!`,
-            token,
+            user
           });
       } else {
         throw new Error("User not found!");
@@ -41,6 +41,7 @@ const login = async (req, res) => {
       message: error.message,
     });
   }
+  next();
 };
 
 module.exports = login;
