@@ -8,8 +8,7 @@ module.exports = {
     addressLine: "CM-123",
     locality: "Sukhliya",
     city: "Jaipur",
-    state: "Rajasthan",
-    country: "India",
+    state: "Rajasthan"
   },
   password: "pw",
 };
