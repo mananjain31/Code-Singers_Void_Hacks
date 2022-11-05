@@ -8,7 +8,7 @@ const getPosts = async (req, res, next) => {
       .sort({ _id: -1 })
       .skip((page - 1) * 25)
       .limit(25)
-      .populate({ path: "user", select: "name address.locality" });
+      .populate({ path: "user", select: "name address.locality address.city address.state" });
     res.status(200).json({ code: 200, status: "success", posts });
   } catch (error) {
     res.status(400).send({

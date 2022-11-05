@@ -3,12 +3,14 @@ import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { user_login } from "Slices/userSlice";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [credentials, setCredentials] = useState("");
   const [password, setPassword] = useState("");
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const { isAuth, status, user } = useSelector((state) => state.user);
 
@@ -16,6 +18,8 @@ const Login = () => {
     e.preventDefault();
 
     await dispatch(user_login(credentials, password));
+    alert("Logged In Succesfully");
+    navigate("/");
   };
 
   useEffect(() => {
