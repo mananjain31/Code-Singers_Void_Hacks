@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { upload_waste } from "Slices/wasteSlice";
+import uploadGIF from "assets/upload.gif";
 
 const WasteUploadForm = () => {
   const [image, setImage] = useState("");
@@ -49,8 +50,8 @@ const WasteUploadForm = () => {
       <form onSubmit={uploadHandler}>
         <div className="flex flex-col m-3 ml-auto">
           <img
-            src={previewImage}
-            alt="preview image"
+            src={uploadGIF}
+            alt="preview"
             className="w-44 h-15 ml-auto mr-auto my-5"
           ></img>
           <input
@@ -65,7 +66,7 @@ const WasteUploadForm = () => {
             htmlFor="icon-button-file"
             className=" w-40 h-8 rounded bg-green-800 mb-2 uppercase cursor-pointer text-center text-white ml-auto mr-auto"
           >
-            upload
+            Upload Image
           </label>
         </div>
 
@@ -93,7 +94,7 @@ const WasteUploadForm = () => {
             className="w-40  h-10 bg-indigo-600 rounded text-slate-50"
             type="submit"
           >
-            Upload Waste
+            Post
           </button>
         </div>
       </form>

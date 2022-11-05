@@ -7,6 +7,7 @@ import gif2 from "assets/2.gif";
 import heroGIF from "assets/3.gif";
 import gif4 from "assets/4.gif";
 import LogoSquare from "assets/VoidSquare.jpg";
+import hero from "assets/hero.png";
 import landingBg from "assets/landingbg.png";
 import { respPX } from "constants/styles";
 
@@ -15,11 +16,12 @@ const LandingPage = () => {
     <>
       <CommonNav />
       <header className="">
-        <SectionWrapper
+        {/* <SectionWrapper
           heading="One Stop Solution for waste Management"
           hsize="md:text-7xl text-5xl"
           image={LogoSquare}
-        />
+        /> */}
+        <img src={hero} className="md:scale-75" />
       </header>
       <hr />
       <main>

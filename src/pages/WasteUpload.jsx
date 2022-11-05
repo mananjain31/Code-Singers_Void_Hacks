@@ -8,9 +8,7 @@ const WasteUpload = () => {
       <CommongNav />
       <section className="w-full h-auto items-center">
         <div className="my-5">
-          <h1 className="text-5xl text-center mb-8 text-indigo-500">
-            Upload Waste
-          </h1>
+          <h1 className="text-5xl text-center text-indigo-500">Upload Waste</h1>
           <WasteUploadForm />
         </div>
       </section>

@@ -54,10 +54,8 @@ const LocateDustbinsPage = () => {
           Locate Dustbins <img src={TrashIcon} alt="trash" className="w-14" />
         </h1>
         <p className="text-lg my-2">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-          voluptatum, quod, quia, voluptas quae voluptatem quibusdam
-          necessitatibus voluptates quidem quos voluptatibus. Quisquam
-          voluptatum, quod, quia, voluptas quae voluptatem quibusdam
+          Find Dustbins near your current location with map syncing, click on
+          them for directions.
         </p>
         <section>
           {currPos.length ? (
