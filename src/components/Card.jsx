@@ -3,15 +3,15 @@ import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
 import Divider from "@mui/material/Divider";
 
-const Card = () => {
+const Card = ({ waste }) => {
   return (
     <div className="w-96 h-auto mx-5 bg-white p-2 rounded-xl shadow-lg shadow-gray-500/40">
       {/* card Head */}
       <div className="flex justify-between">
-        <h1 className="text-xl mb-2 text-green-500">Aman Pandagre</h1>
-        <a href="tel:" className="text-xl mb-2">
+        <h1 className="text-xl mb-2 text-green-500">{waste.user.name}</h1>
+        <button onClick className="text-xl mb-2">
           <img src="logo192.png" alt="call" className="w-8"></img>
-        </a>
+        </button>
       </div>
 
       {/* </Stack> */}

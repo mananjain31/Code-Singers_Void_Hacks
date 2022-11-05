@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CommongNav from "components/nav/CommonNav";
 import Card from "components/Card";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { get_waste } from "Slices/wasteSlice";
 
 const Timeline = () => {
   const navigate = useNavigate();
+
+  const { ewaste, status: wsateStatus } = useSelector((state) => state.ewaste);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(get_waste());
+  }, []);
+
+  console.log(ewaste);
 
   return (
     <>
@@ -19,7 +31,10 @@ const Timeline = () => {
           </button>
         </div>
         <div className="grid grid-rows-4 gap-4">
-          <Card />
+          {ewaste &&
+            ewaste.map((waste) => {
+              return <Card waste={waste} key={waste._id} />;
+            })}
         </div>
       </div>
     </>

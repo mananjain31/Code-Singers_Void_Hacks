@@ -8,7 +8,7 @@ export const STATUS = Object.freeze({
 });
 
 const initialState = {
-  waste: null,
+  ewaste: null,
   status: { type: STATUS.IDLE, message: null },
 };
 
@@ -19,7 +19,7 @@ export const wasteSlice = createSlice({
     uploadWaste(state, action) {},
 
     getWastes(state, action) {
-      state.waste = action.payload;
+      state.ewaste = action.payload;
     },
     setStatus(state, action) {
       state.status.type = action.payload.type;
@@ -54,7 +54,7 @@ export const upload_waste = (title, description, image) => {
       dispatch(
         setStatus({
           type: STATUS.IDLE,
-          message: "User Login Successfully",
+          message: "upload successfull",
         })
       );
     } catch (error) {
@@ -74,12 +74,12 @@ export const get_waste = () => {
   return async function getWastesThunk(dispatch, getState) {
     dispatch(setStatus({ type: STATUS.LOADING, message: "Loading" }));
     try {
-      const { data } = await api.get("signup");
-      dispatch(getWastes(data));
+      const { data } = await api.get("posts/1");
+      dispatch(getWastes(data.posts));
       dispatch(
         setStatus({
           type: STATUS.IDLE,
-          message: "User Login Successfully",
+          message: "data get successflly",
         })
       );
     } catch (error) {
