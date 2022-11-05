@@ -24,7 +24,6 @@ const WasteUploadForm = () => {
   const { waste, status: ewasteStatus } = useSelector((state) => state.ewaste);
 
   const WasteDataChange = (e) => {
-    setImage(e.target.files[0]);
     if (e.target.name === "image") {
       const file = e.target.files[0];
       const reader = new FileReader();
@@ -33,6 +32,7 @@ const WasteUploadForm = () => {
       reader.onload = () => {
         if (reader.readyState === 2) {
           setpreviewImage(reader.result);
+          setImage(reader.result);
         }
       };
     }
