@@ -42,7 +42,7 @@ const LocateDustbinsPage = () => {
   };
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(showPosition);
-  }, []);
+  }, [currPos]);
 
   console.log(dustbins);
 
@@ -60,7 +60,7 @@ const LocateDustbinsPage = () => {
           voluptatum, quod, quia, voluptas quae voluptatem quibusdam
         </p>
         <section>
-          {currPos.length && (
+          {currPos.length ? (
             <MapContainer
               center={currPos}
               zoom={16}
@@ -88,6 +88,8 @@ const LocateDustbinsPage = () => {
                 </Marker>
               ))}
             </MapContainer>
+          ) : (
+            <h2 className="text-red-200">Please Enable Location to continue</h2>
           )}
         </section>
       </main>

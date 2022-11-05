@@ -15,13 +15,15 @@ const CommongNav = () => {
       to: "/waste-category",
     },
     {
-      component: "Food Colectors",
+      component: "Food Collectors",
+      to: "/food-collectors",
     },
     {
       component: "Waste Collectors",
     },
     {
       component: "E-Waste Timeline",
+      to: "/e-waste-timeline",
     },
   ];
 

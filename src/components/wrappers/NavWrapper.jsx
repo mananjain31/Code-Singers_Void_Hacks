@@ -19,7 +19,7 @@ const NavWrapper = ({ list }) => {
       );
     });
   const renderBurgerList = () => (
-    <aside className="bg-[rgb(73,180,35)] fixed h-full right-0 top-0 z-50">
+    <aside className="bg-[#8DE78D] fixed h-full right-0 top-0 z-50">
       <div className="flex flex-col-reverse justify-end h-full gap-10 px-16 py-16">
         {list.map((item, index) => (
           <Link key={index} to={item.to}>

@@ -14,10 +14,8 @@ const LandingPage = () => {
       <CommonNav />
       <header className="">
         <SectionWrapper
-          heading="Code Singers 2022"
-          paragraphs={[
-            "lorem ipsum dolor sit amet consecteturdolor sit amet consecteturdolor sit amet consecteturdolor sit amet consecteturdolor sit amet consecteturdolor sit amet consecteturdolor sit amet consecteturdolor sit amet consecteturdolor sit amet consecteturdolor sit amet consectetur.",
-          ]}
+          heading="One Stop Solution for waste Management"
+          paragraphs={[" ", " ", ""]}
           actionButton={{ text: "Services", to: "/services" }}
           image={LogoSquare}
         />

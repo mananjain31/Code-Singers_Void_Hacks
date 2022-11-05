@@ -8,7 +8,7 @@ import Aman from "assets/aman.jpeg";
 const team = [
   {
     name: "Divyanshu Gour",
-    role: "Mackine Learning",
+    role: "Machine Learning",
     image: Divyanshu,
     github: "https://github.com/mananjain31/",
     linkedin: "https://github.com/mananjain31/",

@@ -57,9 +57,9 @@ const WasteCategoryPage = () => {
   return (
     <>
       <CommongNav />
-      <main className={`${respPX} grid py-6 text-center`}>
+      <main className={`${respPX} grid py-6`}>
         <form>
-          <h1 className="text-3xl flex items-center justify-center gap-1">
+          <h1 className="text-3xl flex  gap-1">
             <span>Upload Waste Image to categorize</span>
             <div className="text-5xl flex items-center justify-center">
               <AddPhotoAlternateIcon fontSize="inherit" color="primary" />
