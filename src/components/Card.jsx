@@ -13,9 +13,10 @@ const Card = ({ waste }) => {
     dispatch(sent_mail(sellerId, title));
     alert("Mail Sent Seccesfully");
   };
-
+  console.log(waste);
+  const { city, locality, state } = waste.user.address;
   return (
-    <div className="w-96 h-auto mx-5 bg-white p-2 rounded-xl shadow-lg shadow-gray-500/40">
+    <div className="w-96 mx-5 bg-white p-2 rounded-xl shadow-lg shadow-gray-500/40">
       {/* card Head */}
       <div className="flex justify-between">
         <div>
@@ -40,13 +41,14 @@ const Card = ({ waste }) => {
         <img
           src={waste.image}
           alt="wasteImage"
-          className="w-auto h-auto m-2"
+          className="w-full h-auto m-2 aspect-square"
         ></img>
       </div>
       <Divider className="my-4" />
       {/* Card Footer */}
       <div>
         <p className="m-2">{waste.description}</p>
+        <p className="m-2">{`${locality}, ${city}, ${state}`}</p>
       </div>
     </div>
   );
