@@ -1,25 +1,31 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { upload_waste } from "Slices/wasteSlice";
 
 const WasteUploadForm = () => {
-  const [image, setImage] = useState();
+  const [image, setImage] = useState("");
   const [previewImage, setpreviewImage] = useState("logo512.png");
   const [title, setTitle] = useState();
   const [description, setDescription] = useState();
 
-  const uploadHandler = (e) => {
+  const uploadHandler = async (e) => {
     e.preventDefault();
 
-    const formData = new FormData();
-    formData.append("title", title);
-    formData.append("description", description);
-    formData.append("image", image);
+    const myForm = new FormData();
+    myForm.append("title", title);
+    myForm.append("description", description);
+    myForm.append("image", image);
+
+    await dispatch(upload_waste(myForm));
   };
 
   const dispatch = useDispatch();
 
+  const { waste, status: ewasteStatus } = useSelector((state) => state.ewaste);
+
   const WasteDataChange = (e) => {
-    if (e.target.name === "avatar") {
+    setImage(e.target.files[0]);
+    if (e.target.name === "image") {
       const file = e.target.files[0];
       const reader = new FileReader();
 
@@ -27,15 +33,20 @@ const WasteUploadForm = () => {
       reader.onload = () => {
         if (reader.readyState === 2) {
           setpreviewImage(reader.result);
-          setImage(reader.result);
         }
       };
     }
   };
 
+  useEffect(() => {
+    if (ewasteStatus.type === "error") {
+      alert(ewasteStatus.message);
+    }
+  }, []);
+
   return (
     <div className="inputFields flex justify-center ">
-      <form>
+      <form onSubmit={uploadHandler}>
         <div className="flex flex-col m-3 ml-auto">
           <img
             src={previewImage}
@@ -45,8 +56,8 @@ const WasteUploadForm = () => {
           <input
             id="icon-button-file"
             type="file"
-            name="avatar"
-            accept="image/*"
+            name="image"
+            // accept="image/*"
             style={{ display: "none" }}
             onChange={WasteDataChange}
           />
@@ -80,7 +91,7 @@ const WasteUploadForm = () => {
         <div className="mt-9 mb-9 w-full flex justify-center items-center">
           <button
             className="w-40  h-10 bg-indigo-600 rounded text-slate-50"
-            onClick={uploadHandler}
+            type="submit"
           >
             Upload Waste
           </button>

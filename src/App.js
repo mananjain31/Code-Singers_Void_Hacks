@@ -8,6 +8,7 @@ import WasteCategoryPage from "pages/WasteCategoryPage";
 import LocateDustbinsPage from "pages/LocateDustbinsPage";
 import WasteUpload from "pages/WasteUpload";
 import FoodCollectorsPage from "pages/FoodCollectorsPage";
+import Timeline from "pages/Timeline";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         <Route path="/locate-dustbins" element={<LocateDustbinsPage />} />
         <Route path="/waste-category" element={<WasteCategoryPage />} />
         <Route path="/login-register" element={<LoginRegisterPage />} />
-        <Route path="/e-waste-timeline" element={<WasteUpload />} />
+        <Route path="/eWaste-timeline" element={<WasteUpload />} />
         <Route path="/food-collectors" element={<FoodCollectorsPage />} />
         <Route
           path="/logout"

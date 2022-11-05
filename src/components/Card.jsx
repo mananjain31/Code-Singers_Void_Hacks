@@ -5,7 +5,7 @@ import Divider from "@mui/material/Divider";
 
 const Card = () => {
   return (
-    <div className="w-64 h-auto mx-5 bg-white p-2 rounded-xl shadow-lg shadow-gray-500/40">
+    <div className="w-96 h-auto mx-5 bg-white p-2 rounded-xl shadow-lg shadow-gray-500/40">
       {/* card Head */}
       <div className="flex justify-between">
         <h1 className="text-xl mb-2 text-green-500">Aman Pandagre</h1>
