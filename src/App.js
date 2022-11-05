@@ -9,8 +9,11 @@ import LocateDustbinsPage from "pages/LocateDustbinsPage";
 import WasteUpload from "pages/WasteUpload";
 import FoodCollectorsPage from "pages/FoodCollectorsPage";
 import Timeline from "pages/Timeline";
+import { useSelector } from "react-redux";
 
 function App() {
+  const user = useSelector((state) => state.user);
+  console.log(user);
   return (
     <BrowserRouter>
       <Routes>
@@ -18,16 +21,11 @@ function App() {
         <Route path="/locate-dustbins" element={<LocateDustbinsPage />} />
         <Route path="/waste-category" element={<WasteCategoryPage />} />
         <Route path="/login-register" element={<LoginRegisterPage />} />
-        <Route path="/eWaste-timeline" element={<WasteUpload />} />
-        <Route path="/food-collectors" element={<FoodCollectorsPage />} />
         <Route
-          path="/logout"
-          element={
-            <RequireAuth>
-              <LogoutPage />
-            </RequireAuth>
-          }
+          path="/eWaste-timeline"
+          element={<RequireAuth render={<WasteUpload />} />}
         />
+        <Route path="/food-collectors" element={<FoodCollectorsPage />} />
         <Route
           path="/dashboard"
           element={<RequireAuth>Protected</RequireAuth>}

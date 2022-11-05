@@ -42,7 +42,7 @@ const team = [
 
 const OurTeam = () => {
   return (
-    <section className={`${respPX} py-8 bg-[#8DE78D] text-center`}>
+    <section className={`${respPX} py-14 bg-[#8DE78D] text-center`}>
       <h2 className="text-4xl">Our Team</h2>
       <div className="flex justify-center mt-4">
         <p className="w-3/4">
