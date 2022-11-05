@@ -5,10 +5,7 @@ require("../models/user");
 const eWasteSchema = new mongoose.Schema({
   title: { type: String, required: true },
   description: String,
-  image: {
-    public_id: String,
-    url: String,
-  },
+  image: { type: String, required: true },
   user: { type: Schema.Types.ObjectId, ref: "users" },
 });
 
