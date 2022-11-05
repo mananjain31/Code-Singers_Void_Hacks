@@ -81,8 +81,12 @@ const WasteCategoryPage = () => {
 
           {image && result && (
             <div className="flex justify-around py-10 border-2 border-black bg-green-50 flex-wrap">
-              <img src={image} alt="your trash" />
-              <img src={getImageFromClass(result[0].class)} alt="your trash" />
+              <img src={image} alt="your trash" className="w-1/3" />
+              <img
+                src={getImageFromClass(result[0].class)}
+                alt="your trash"
+                className="w-1/3"
+              />
             </div>
           )}
         </form>
