@@ -7,7 +7,7 @@ const WasteUpload = () => {
   return (
     <>
       <CommongNav />
-      <div className="flex justify-evenly py-8">
+      <div className="flex md:flex-row flex-col justify-evenly py-8">
         <section className="items-center">
           <div className="my-5">
             <h1 className="text-5xl text-center text-indigo-500">
