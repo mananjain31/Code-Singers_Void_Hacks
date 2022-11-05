@@ -29,8 +29,6 @@ function App() {
           path="/dashboard"
           element={<RequireAuth>Protected</RequireAuth>}
         />
-        <Route path="/eWaste-timeline" element={<Timeline />} />
-        <Route path="/eWaste-upload" element={<WasteUpload />} />
       </Routes>
     </BrowserRouter>
   );
