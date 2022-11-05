@@ -26,7 +26,7 @@ const LandingPage = () => {
         <SectionWrapper
           heading="About Indore Waste Management"
           paragraphs={[
-            "lorem ipsum dolor sit amet consecteturdolor sit amet consecteturdolor sit amet consecteturdolor sit amet consecteturdolor sit amet consecteturdolor sit amet consecteturdolor sit amet consecteturdolor sit amet consecteturdolor sit amet consecteturdolor sit amet consectetur.",
+            "Indore has been divided into 19 zones and 85 wards. Each ward has on an average 6,000 households and 600 commercial establishments (part of 88 notified commercial areas). In Indore, waste is generated from various sources including households, commercial areas and other institutions like RWAs, hospitals, hotels among others. The households or residential complexes are covered by the door-to-door collection system while the semi bulk and bulk generators are covered by the bulk collection system. Indore ensures the 100% coverage of wards through its door-to-door collection system.",
           ]}
           inverted
           image={heroGIF}
