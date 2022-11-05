@@ -35,15 +35,20 @@ export const { clearAllErrors, setStatus, uploadWaste, getWastes } =
   wasteSlice.actions;
 export default wasteSlice.reducer;
 
-export const upload_waste = (formData) => {
+export const upload_waste = (title, description, image) => {
   return async function uploadWasteThunk(dispatch, getState) {
     dispatch(setStatus({ type: STATUS.LOADING, message: "Loading" }));
     try {
-      const { data } = await api.post("login", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      //   console.log(myForm);
+      const { data } = await api.post(
+        "uploadfiles",
+        { title, description, image },
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
 
       dispatch(uploadWaste());
       dispatch(

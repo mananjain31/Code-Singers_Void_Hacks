@@ -6,6 +6,8 @@ import LoginRegisterPage from "pages/LoginRegisterPage";
 import LogoutPage from "pages/LogoutPage";
 import WasteCategoryPage from "pages/WasteCategoryPage";
 import LocateDustbinsPage from "pages/LocateDustbinsPage";
+import Timeline from "pages/Timeline";
+import WasteUpload from "pages/WasteUpload";
 
 function App() {
   return (
@@ -27,6 +29,7 @@ function App() {
           path="/dashboard"
           element={<RequireAuth>Protected</RequireAuth>}
         />
+       
       </Routes>
     </BrowserRouter>
   );

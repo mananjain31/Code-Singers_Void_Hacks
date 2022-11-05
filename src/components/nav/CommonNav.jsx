@@ -22,6 +22,7 @@ const CommongNav = () => {
     },
     {
       component: "E-Waste Timeline",
+      to: "/eWaste-timeline",
     },
   ];
 
