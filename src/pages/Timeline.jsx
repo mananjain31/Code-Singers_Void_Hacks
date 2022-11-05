@@ -20,16 +20,7 @@ const Timeline = () => {
 
   return (
     <>
-      <CommongNav />
       <div className="flex flex-col justify-center items-center">
-        <div className="ml-auto mr-auto my-8">
-          <button
-            className="w-64 h-12 bg-purple-500 rounded-lg"
-            onClick={() => navigate("/eWaste-upload")}
-          >
-            Upload eWaste
-          </button>
-        </div>
         <div className="grid grid-rows-4 gap-4">
           {ewaste &&
             ewaste.map((waste) => {

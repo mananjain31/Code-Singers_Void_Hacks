@@ -10,7 +10,8 @@ const Card = ({ waste }) => {
   const dispatch = useDispatch();
 
   const mailHandler = (sellerId, title) => {
-    dispatch(sent_mail());
+    dispatch(sent_mail(sellerId, title));
+    alert("Mail Sent Seccesfully");
   };
 
   return (
@@ -37,7 +38,7 @@ const Card = ({ waste }) => {
       {/* card Mid */}
       <div className="flex justify-center">
         <img
-          src="profile.jpg"
+          src={waste.image}
           alt="wasteImage"
           className="w-auto h-auto m-2"
         ></img>
