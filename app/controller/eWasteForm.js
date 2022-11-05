@@ -19,10 +19,7 @@ const eWasteInfo = async (req, res, next) => {
         folder: "/voidtrash",
       });
       //console.log(req.file);
-      newPost.image = {
-        public_id: imageOnCloud.public_id,
-        url: imageOnCloud.secure_url,
-      };
+      newPost.image = imageOnCloud.secure_url;
       //console.log(req.userId);
       newPost.user = req.userId;
       await newPost.save();
