@@ -4,7 +4,7 @@ const getPosts = async (req, res, next) => {
   const page = req.params.page;
   try {
     const posts = await eWaste
-      .find()
+      .find({}, "-__v")
       .sort({ _id: -1 })
       .skip((page - 1) * 25)
       .limit(25)

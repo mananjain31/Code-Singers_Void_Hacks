@@ -1,6 +1,7 @@
 //request
 /*
 posts/1
+with cookie
 */
 
 //response

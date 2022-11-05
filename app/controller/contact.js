@@ -4,21 +4,21 @@ const User = require("../models/user");
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "youremail@address.com",
-    pass: "yourpassword",
+    user: "johncookbrowse@gmail.com",
+    pass: "kkoixcqyopunyuzc",
   },
 });
 
 const contact = async (req, res, next) => {
   try {
-    if (req.body.sellerId && req.body.buyerId && req.body.title) {
+    if (req.body.sellerId && req.body.title) {
       const seller = await User.findById(req.body.sellerId, "email -_id");
       const buyer = await User.findById(
-        req.body.buyerId,
+        req.userId,
         "name contact address email -_id"
       );
       const mailOptions = {
-        from: "sender@email.com", // sender address
+        from: "johncookbrowse@gmail.com", // sender address
         to: seller.email, // list of receivers
         subject: `Someone showed interest in ${req.body.title}`, // Subject line
         html: `<p>
@@ -28,6 +28,7 @@ const contact = async (req, res, next) => {
                 Email: ${buyer.email} <br>
                 Address: ${buyer.address.addressLine}, ${buyer.address.locality} <br>
                 City: ${buyer.address.city}, ${buyer.address.state} <br>
+                Regards: <strong>Team VoidTrash</strong>
             </p>`, // plain text body
       };
       await transporter.sendMail(mailOptions);
@@ -44,6 +45,7 @@ const contact = async (req, res, next) => {
       message: error.message,
     });
   }
+  next();
 };
 
 module.exports = contact;
