@@ -7,6 +7,8 @@ import gif2 from "assets/2.gif";
 import heroGIF from "assets/3.gif";
 import gif4 from "assets/4.gif";
 import LogoSquare from "assets/VoidSquare.jpg";
+import landingBg from "assets/landingbg.png";
+import { respPX } from "constants/styles";
 
 const LandingPage = () => {
   return (
@@ -15,8 +17,7 @@ const LandingPage = () => {
       <header className="">
         <SectionWrapper
           heading="One Stop Solution for waste Management"
-          paragraphs={[" ", " ", ""]}
-          actionButton={{ text: "Services", to: "/services" }}
+          hsize="md:text-7xl text-5xl"
           image={LogoSquare}
         />
       </header>
@@ -33,13 +34,21 @@ const LandingPage = () => {
         />
         <hr />
         {/* Our Proposed Solution / What we do */}
-        <SectionWrapper
+        {/* <SectionWrapper
           heading="Our Proposed Solution / What we do"
           paragraphs={[
             "lorem ipsum dolor sit amet consecteturdolor sit amet consecteturdolor sit amet consecteturdolor sit amet consecteturdolor sit amet consecteturdolor sit amet consecteturdolor sit amet consecteturdolor sit amet consecteturdolor sit amet consecteturdolor sit amet consectetur.",
           ]}
           image={gif2}
-        />
+        /> */}
+        <section className="h-[60vh] flex flex-col items-center justify-center gap-10">
+          <h1 className={`${respPX} pb-3 text-5xl bg-white`}>Our Features</h1>
+          <img
+            src={landingBg}
+            alt="what we do"
+            className="object-cover md:h-full shadow-lg md:w-auto w-[80vmin]"
+          />
+        </section>
         {/* Our Team */}
         <OurTeam />
       </main>

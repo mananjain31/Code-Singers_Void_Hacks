@@ -1,10 +1,13 @@
+import CommongNav from "components/nav/CommonNav";
 import React from "react";
 
 const LogoutPage = () => {
   return (
-    <p>
-      Confirm Logout ? <button>Confirm</button>
-    </p>
+    <>
+      <CommongNav />
+      <h1 className={`text-3xl`}>Confirm Logout ?</h1>
+      <button>Confirm</button>
+    </>
   );
 };
 

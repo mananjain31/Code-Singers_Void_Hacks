@@ -1,10 +1,10 @@
 import { Button } from "@mui/material";
 import NavWrapper from "components/wrappers/NavWrapper";
 import React from "react";
+import { useSelector } from "react-redux";
 
 const CommongNav = () => {
-  //   const { isAuth } = useSelector((state) => state);
-  const isAuth = false;
+  const { isAuth } = useSelector((state) => state.user);
   const list = [
     {
       component: "Locate Dustbin",
@@ -31,15 +31,17 @@ const CommongNav = () => {
     isAuth
       ? {
           component: (
-            <Button variant="contained" color="inherit≠">
+            <button
+              className="border-4 border-black px-2 py-1 text-lg w-full"
+              onClick={() => {}}
+            >
               Logout
-            </Button>
+            </button>
           ),
-          to: "/logout",
         }
       : {
           component: (
-            <button className="border-4 border-black px-2 py-1 text-lg">
+            <button className="border-4 border-black px-2 py-1 text-lg w-full">
               Login / Register
             </button>
           ),
