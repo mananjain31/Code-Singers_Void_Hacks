@@ -6,6 +6,7 @@ const model = new TeachableMachine({
 
 const imagePredictor = async (req, res, next) => {
   const imagDataUrl = req.body.imageDataUrl;
+  console.log(imagDataUrl);
   if (!imagDataUrl) {
     res.status(401).json({
       code: 401,

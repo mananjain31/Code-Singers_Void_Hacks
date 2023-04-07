@@ -13,7 +13,7 @@ app.use(express.static(__dirname + "/app/public"));
 app.use(cors());
 app.use(route);
 
-const PORT = process.env.SERVER_PORT || 8000;
+const PORT = process.env.SERVER_PORT || 8080;
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}`);
 });

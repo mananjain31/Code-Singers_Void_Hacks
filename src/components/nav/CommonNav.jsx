@@ -1,10 +1,18 @@
 import { Button } from "@mui/material";
 import NavWrapper from "components/wrappers/NavWrapper";
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { user_logout } from "Slices/userSlice";
 
 const CommongNav = () => {
   const { isAuth } = useSelector((state) => state.user);
+
+  const dispatch = useDispatch();
+
+  const logoutHandler = async () => {
+    await dispatch(user_logout());
+    alert("User Logged Out");
+  };
   const list = [
     {
       component: "Locate Dustbin",
@@ -34,7 +42,7 @@ const CommongNav = () => {
           component: (
             <button
               className="border-4 border-black px-2 py-1 text-lg w-full"
-              onClick={() => {}}
+              onClick={logoutHandler}
             >
               Logout
             </button>

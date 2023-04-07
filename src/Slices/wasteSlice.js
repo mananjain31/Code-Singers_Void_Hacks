@@ -40,7 +40,7 @@ export const upload_waste = (myForm) => {
   return async function uploadWasteThunk(dispatch, getState) {
     dispatch(setStatus({ type: STATUS.LOADING, message: "Loading" }));
     try {
-      //   console.log(myForm);
+      console.log(myForm);
       const { data } = await api.post("uploadfiles", myForm, {
         headers: {
           "Content-Type": "multipart/form-data",

@@ -33,7 +33,7 @@ const WasteCategoryPage = () => {
   const [result, setResult] = React.useState(null);
 
   const handleChange = (e) => {
-    console.log(e);
+    console.log(e.target.files[0]);
     const file = e.target.files[0];
     let reader = new FileReader();
     reader.readAsDataURL(file);
@@ -43,6 +43,7 @@ const WasteCategoryPage = () => {
       const { data } = await api.post("/imageprediction", {
         imageDataUrl: reader.result,
       });
+      console.log(reader.result);
       setResult(data.predictions);
       console.log(data.predictions);
     };
