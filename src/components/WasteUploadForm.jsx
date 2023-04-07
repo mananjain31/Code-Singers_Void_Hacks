@@ -58,7 +58,7 @@ const WasteUploadForm = () => {
             id="icon-button-file"
             type="file"
             name="image"
-            // accept="image/*"
+            accept="image/*"
             style={{ display: "none" }}
             onChange={WasteDataChange}
           />

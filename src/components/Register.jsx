@@ -37,7 +37,7 @@ const Register = () => {
   }, []);
 
   return (
-    <div className="inputFields flex justify-center  rounded-xl py-4">
+    <div className="inputFields flex justify-center  rounded-xl py-4 shadow-lg shadow-gray-500/40">
       <form>
         <div className="grid md:grid-cols-2 gap-8 p-0">
           <div className="flex flex-col mx-3 ml-auto">

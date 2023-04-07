@@ -25,6 +25,10 @@ export const userSlice = createSlice({
       state.isAuth = true;
       state.user = action.payload;
     },
+    userLogout(state, action) {
+      state.isAuth = false;
+      state.user = null;
+    },
     setStatus(state, action) {
       state.status.type = action.payload.type;
       state.status.message = action.payload.message;
@@ -35,8 +39,13 @@ export const userSlice = createSlice({
   },
 });
 
-export const { clearAllErrors, setStatus, userLogin, userRegister } =
-  userSlice.actions;
+export const {
+  clearAllErrors,
+  setStatus,
+  userLogin,
+  userRegister,
+  userLogout,
+} = userSlice.actions;
 export default userSlice.reducer;
 
 export const user_login = (credential, password) => {
@@ -81,6 +90,30 @@ export const user_registration = (name, contact, email, address, password) => {
         setStatus({
           type: STATUS.IDLE,
           message: "User Login Successfully",
+        })
+      );
+    } catch (error) {
+      if (error) {
+        dispatch(
+          setStatus({
+            type: STATUS.ERROR,
+            message: error.response.data.message,
+          })
+        );
+      }
+    }
+  };
+};
+
+export const user_logout = (name, contact, email, address, password) => {
+  return async function userLogoutThunk(dispatch, getState) {
+    dispatch(setStatus({ type: STATUS.LOADING, message: "Loading" }));
+    try {
+      dispatch(userLogout());
+      dispatch(
+        setStatus({
+          type: STATUS.IDLE,
+          message: "User logout Successfully",
         })
       );
     } catch (error) {
