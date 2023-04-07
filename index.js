@@ -10,6 +10,8 @@ app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(__dirname + "/app/public"));
+app.use(express.static(__dirname + "build"));
+app.use(express.static(__dirname + "dist"));
 app.use(cors());
 app.use(route);
 
