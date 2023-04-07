@@ -1,4 +1,4 @@
-FROM localstack/java-maven-node-python
+FROM node:19-alpine3.16
 WORKDIR .
 ADD package*.json .
 ADD yarn.lock .
