@@ -15,6 +15,7 @@ import WasteCollectorPage from "pages/WasteCollectorPage";
 function App() {
   const user = useSelector((state) => state.user);
   console.log(user);
+  console.log(user);
   return (
     <BrowserRouter>
       <Routes>
