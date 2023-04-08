@@ -7,14 +7,14 @@ const signUp = async (req, res, next) => {
       req.body.name &&
       validator.isEmail(req.body.email) &&
       validator.isMobilePhone(req.body.contact.toString(), "en-IN") &&
-      validator.isStrongPassword(req.body.password, {
-        minLength: 6,
-        minLowercase: 1,
-        minUppercase: 1,
-        minNumbers: 1,
-        minSymbols: 1,
-        returnScore: false,
-      }) &&
+      // validator.isStrongPassword(req.body.password, {
+      //   minLength: 6,
+      //   minLowercase: 1,
+      //   minUppercase: 1,
+      //   minNumbers: 1,
+      //   minSymbols: 1,
+      //   returnScore: false,
+      // }) &&
       req.body.address.pincode.toString().length === 6 &&
       req.body.address.addressLine &&
       req.body.address.locality &&

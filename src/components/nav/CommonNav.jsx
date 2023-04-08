@@ -30,10 +30,6 @@ const CommongNav = () => {
       component: "Waste Collectors",
       to: "/waste-collectors",
     },
-    {
-      component: "E-Waste Timeline",
-      to: "/eWaste-timeline",
-    },
   ];
 
   list.push(

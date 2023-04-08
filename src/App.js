@@ -8,7 +8,6 @@ import WasteCategoryPage from "pages/WasteCategoryPage";
 import LocateDustbinsPage from "pages/LocateDustbinsPage";
 import WasteUpload from "pages/WasteUpload";
 import FoodCollectorsPage from "pages/FoodCollectorsPage";
-import Timeline from "pages/Timeline";
 import { useSelector } from "react-redux";
 import WasteCollectorPage from "pages/WasteCollectorPage";
 
@@ -24,10 +23,6 @@ function App() {
         <Route path="/waste-category" element={<WasteCategoryPage />} />
         <Route path="/login-register" element={<LoginRegisterPage />} />
         <Route path="/waste-collectors" element={<WasteCollectorPage />} />
-        <Route
-          path="/eWaste-timeline"
-          element={<RequireAuth render={<WasteUpload />} />}
-        />
         <Route path="/food-collectors" element={<FoodCollectorsPage />} />
         <Route
           path="/dashboard"

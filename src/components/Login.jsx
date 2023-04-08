@@ -43,7 +43,7 @@ const Login = () => {
         </div>
 
         <div className="flex flex-col m-3 ml-auto">
-          <labe className="mb-2 uppercase">Password</labe>
+          <label className="mb-2 uppercase">Password</label>
           <input
             type="password"
             name="password"

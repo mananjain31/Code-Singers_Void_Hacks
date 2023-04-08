@@ -21,8 +21,6 @@ const LandingPage = () => {
           hsize="md:text-7xl text-5xl"
           image={LogoSquare}
         /> */}
-        {/* <img src={hero} className="md:scale-75" /> */}
-        <h1>Aman Pandagre</h1>
       </header>
       <hr />
       <main>

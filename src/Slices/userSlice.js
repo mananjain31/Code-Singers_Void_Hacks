@@ -52,7 +52,11 @@ export const user_login = (credential, password) => {
   return async function userLoginThunk(dispatch, getState) {
     dispatch(setStatus({ type: STATUS.LOADING, message: "Loading" }));
     try {
+      console.log("logging in");
+
       const { data } = await api.post("login", { credential, password });
+      console.log("logged in");
+      console.log(data);
 
       dispatch(userLogin(data.user));
       dispatch(

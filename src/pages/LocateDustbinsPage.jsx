@@ -42,7 +42,7 @@ const LocateDustbinsPage = () => {
   };
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(showPosition);
-  }, [currPos]);
+  }, [currPos[0]?.toFixed(4), currPos[1]?.toFixed(4)]);
 
   console.log(dustbins);
 
@@ -96,3 +96,5 @@ const LocateDustbinsPage = () => {
 };
 
 export default LocateDustbinsPage;
+
+// serve -s build

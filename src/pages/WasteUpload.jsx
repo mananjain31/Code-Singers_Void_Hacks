@@ -1,7 +1,6 @@
 import React from "react";
 import WasteUploadForm from "components/WasteUploadForm";
 import CommongNav from "components/nav/CommonNav";
-import Timeline from "./Timeline";
 
 const WasteUpload = () => {
   return (
@@ -15,9 +14,6 @@ const WasteUpload = () => {
             </h1>
             <WasteUploadForm />
           </div>
-        </section>
-        <section className="h-screen overflow-scroll">
-          <Timeline />
         </section>
       </div>
     </>
